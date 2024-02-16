@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Bill Form</title>
+    <link rel="stylesheet" href="static/billform.css">
+</head>
+<body>
+<h1>The Bill Form</h1>
+<p>Please fill out the form:</p>
+<form action="/resul_page" method="post">
+    {{ billform.amount.label }} {{ billform.amount }}
+    <br>
+    {{ billform.period.label }} {{ billform.period }}
+    <br>
+    <p>First Flatmate :</p>
+    {{ billform.name1.label }} {{ billform.name1 }}
+    <br>
+    {{ billform.days_in_house1.label }} {{ billform.days_in_house1}}
+    <br>
+    <p>Second Flatmate :</p>
+    {{ billform.name2.label }} {{ billform.name2 }}
+    <br>
+    {{ billform.days_in_house2.label }} {{ billform.days_in_house2}}
+    <br>
+    <br>
+    {{ billform.button }}
+</form>
+
+{% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+{% endif %}
+
+
+</body>
+</html>
